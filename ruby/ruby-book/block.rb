@@ -1,4 +1,6 @@
-num_list = 1..6
+num_list = [1, 2, 3, 4, 5, 6]
+num_list = 1..6 # こう書き換えることもできる
+# num_list = 1...6 # この場合6は含まれない
 result = []
 
 # ====================
@@ -83,3 +85,46 @@ puts '=================='
 result = []
 result = num_list.select(&:odd?)
 puts result
+
+puts '=================='
+
+# ====================
+# each_with_index
+# ====================
+fruits = [
+	'apple',
+	'banana',
+	'berry',
+]
+fruits.each_with_index do |fruit, i|
+	puts "#{i}番目のフルーツは'#{fruit}'"
+end
+
+puts '=================='
+
+# ====================
+# xxx.with_index
+# ====================
+
+fruits = [
+	'apple',
+	'banana',
+	'berry',
+]
+
+puts fruits.map.with_index {|fruit, i| "#{i}番目は'#{fruit}'"}
+
+puts '=================='
+
+# ====================
+# times（forの代わり）
+# ====================
+sum = 0
+count = 5
+count.times do |n|
+	sum += n
+end
+puts sum
+
+puts '=================='
+
